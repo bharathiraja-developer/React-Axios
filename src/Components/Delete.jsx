@@ -2,13 +2,14 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Delete({ datas }) {
+function Delete({ datas, fetchData }) {
   const [deleteId, setDeleteId] = useState(1);
   let history = useNavigate();
   const handleSubmit = () => {
     axios
-      .delete(`https://jsonplaceholder.typicode.com/users/${deleteId}`)
+      .delete(`https://653bb12b2e42fd0d54d5864d.mockapi.io/users/${deleteId}`)
       .then((response) => {
+        fetchData();
         window.alert(`UserId : ${deleteId} was deleted successfully`);
       });
     history("/");

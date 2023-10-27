@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Edit({ datas }) {
+function Edit({ datas, fetchData }) {
   const [status, setStatus] = useState(true);
   const [editId, setEditId] = useState(1);
   const [name, setName] = useState(datas[editId - 1].name);
@@ -38,8 +38,12 @@ function Edit({ datas }) {
       },
     };
     axios
-      .put(`https://jsonplaceholder.typicode.com/users/${editId}`, editData)
+      .put(
+        `https://653bb12b2e42fd0d54d5864d.mockapi.io/users/${editId}`,
+        editData
+      )
       .then((response) => {
+        fetchData();
         window.alert(`UserId : ${editId} was Edited successfully`);
       });
     history("/");

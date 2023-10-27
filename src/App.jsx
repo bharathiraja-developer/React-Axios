@@ -12,7 +12,7 @@ function App() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
+        "https://653bb12b2e42fd0d54d5864d.mockapi.io/users"
       );
       setDatas(response.data);
     } catch (error) {
@@ -22,15 +22,23 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home datas={datas} />} />
-        <Route path="/create" element={<Create datas={datas} />} />
-        <Route path="/edit" element={<Edit datas={datas} />} />
-        <Route path="/delete" element={<Delete datas={datas} />} />
+        <Route
+          path="/create"
+          element={<Create datas={datas} fetchData={fetchData} />}
+        />
+        <Route
+          path="/edit"
+          element={<Edit datas={datas} fetchData={fetchData} />}
+        />
+        <Route
+          path="/delete"
+          element={<Delete datas={datas} fetchData={fetchData} />}
+        />
       </Routes>
     </Router>
   );

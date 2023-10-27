@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Create({ datas }) {
+function Create({ datas, fetchData }) {
   let history = useNavigate();
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -14,9 +14,11 @@ function Create({ datas }) {
   const [city, setCity] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [companyname, setCompanyname] = useState("");
+  let count;
+  datas.map((data) => (count = data.id));
   const handleSubmit = () => {
     const newData = {
-      id: datas.length + 1,
+      id: count + 1,
       name: name,
       username: username,
       email: email,
@@ -33,8 +35,9 @@ function Create({ datas }) {
       },
     };
     axios
-      .post("https://jsonplaceholder.typicode.com/users", newData)
+      .post("https://653bb12b2e42fd0d54d5864d.mockapi.io/users", newData)
       .then(() => {
+        fetchData();
         window.alert(`New user : ${name} created successfully`);
       });
     history("/");
