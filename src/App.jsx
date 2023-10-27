@@ -29,8 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home datas={datas} />} />
         <Route path="/create" element={<Create datas={datas} />} />
-        <Route path="/edit" element={<Edit />} />
-        <Route path="/delete" element={<Delete />} />
+        <Route path="/edit" element={<Edit datas={datas} />} />
+        <Route path="/delete" element={<Delete datas={datas} />} />
       </Routes>
     </Router>
   );

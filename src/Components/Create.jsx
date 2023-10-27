@@ -35,7 +35,7 @@ function Create({ datas }) {
     axios
       .post("https://jsonplaceholder.typicode.com/users", newData)
       .then(() => {
-        window.confirm("New user created");
+        window.alert(`New user : ${name} created successfully`);
       });
     history("/");
   };
@@ -93,7 +93,7 @@ function Create({ datas }) {
                         setPhone(e.target.value);
                       }}
                       className="ms-3"
-                      type="number"
+                      type="text"
                       name="phone"
                       required={true}
                     />
