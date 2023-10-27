@@ -5,6 +5,7 @@ function ReadData({ data }) {
     <div className="col mb-5">
       <div className="card p-4 fs-5">
         <div className="text-left">
+          <p>User Id : {data.id}</p>
           <p>Name : {data.name}</p>
           <p>Username : {data.username}</p>
           <p>Email : {data.email}</p>

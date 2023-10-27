@@ -22,27 +22,22 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 mt-2 fw-medium">
             <li className="nav-item">
-              <Link
-                to="/"
-                className="nav-link active"
-                aria-current="page"
-                href="#!"
-              >
+              <Link to="/" className="nav-link">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Create" className="nav-link" href="#!">
+              <Link to="/create" className="nav-link">
                 Create
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Edit" className="nav-link" href="#!">
+              <Link to="/edit" className="nav-link">
                 Edit
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Delete" className="nav-link" href="#!">
+              <Link to="/delete" className="nav-link">
                 Delete
               </Link>
             </li>

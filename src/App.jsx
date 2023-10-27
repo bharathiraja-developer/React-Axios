@@ -28,9 +28,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home datas={datas} />} />
-        <Route path="/Create" element={<Create />} />
-        <Route path="/Edit" element={<Edit />} />
-        <Route path="/Delete" element={<Delete />} />
+        <Route path="/create" element={<Create datas={datas} />} />
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/delete" element={<Delete />} />
       </Routes>
     </Router>
   );
